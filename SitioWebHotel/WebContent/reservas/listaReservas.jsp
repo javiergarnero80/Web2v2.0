@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true"%>
 <%
 
 response.setHeader("Pragma","no-cache");
@@ -21,55 +21,61 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lista de Reservas</title>
-        <jsp:include page="/cabecera.jsp"/>
-    </head>
-    <body>
-        <jsp:include page="/menu.jsp"/>
-        <div align="right">
-                	Bienvenido Sr: <%=session.getAttribute("email") %>
-                	<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar Sesion</a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <h3>Lista de Reservas</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-10">
-                <br><br>
-                <table class="table table-striped table-bordered table-hover" id=tabla>
-                    <thead>
-                        <tr>
-                            <th>Número Reserva</th>
-                           	<th>Nombre del Cliente</th>
-                            <th>Fecha y Hora de Reserva</th>
-                            <th>Total de Costo de la Reserva</th>
-                            <th>Operaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    	<c:forEach items="${requestScope.listaReservas}" var="reserva"> <!-- recorremos la lista que nos envio el controlador -->
-                            <tr>
-                                <td>${reserva.idReserva}</td>
-                                <td>${reserva.idCliente.nombre}</td>
-                                <td>${reserva.fechaHoraReserva}</td>
-                                <td>$ ${reserva.totalGeneralReserva}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="#"><span class="glyphicon glyphicon-edit"></span></a>
-                                    <a  class="btn btn-danger" href="javascript:eliminar('${reserva.idReserva}')"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>
-                            </tr>
-                   		</c:forEach>
-                    </tbody>
-                </table>
-                </div>
-                
-            </div>                    
-        </div> 
-        
-        <script type="text/javascript">
+<head>
+<title>Lista de Reservas</title>
+<jsp:include page="/cabecera.jsp" />
+</head>
+<body>
+	<jsp:include page="/menu.jsp" />
+	<div align="right">
+		Bienvenido Sr:
+		<%=session.getAttribute("email") %>
+		<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar
+			Sesion</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<h3>Lista de Reservas</h3>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<br>
+				<br>
+				<table class="table table-striped table-bordered table-hover"
+					id=tabla>
+					<thead>
+						<tr>
+							<th>Número Reserva</th>
+							<th>Nombre del Cliente</th>
+							<th>Fecha y Hora de Reserva</th>
+							<th>Total de Costo de la Reserva</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<c:forEach items="${requestScope.listaReservas}" var="reserva">
+							<!-- recorremos la lista que nos envio el controlador -->
+							<tr>
+								<td>${reserva.idReserva}</td>
+								<td>${reserva.idCliente.nombre}</td>
+								<td>${reserva.fechaHoraReserva}</td>
+								<td>$ ${reserva.totalGeneralReserva}</td>
+								<td><a class="btn btn-primary" href="#"><span
+										class="glyphicon glyphicon-edit"></span></a> <a
+									class="btn btn-danger"
+									href="javascript:eliminar('${reserva.idReserva}')"><span
+										class="glyphicon glyphicon-trash"></span></a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
         /*convertimos la tabla en un data table*/
     	$(document).ready(function() {
 				$('#tabla').DataTable({
@@ -109,8 +115,8 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 	    	}
         
         </script>
-        
-    </body>
+
+</body>
 </html>
 
 

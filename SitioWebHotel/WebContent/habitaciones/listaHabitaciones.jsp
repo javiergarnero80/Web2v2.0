@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true"%>
 <%
 
 response.setHeader("Pragma","no-cache");
@@ -21,58 +21,67 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lista de Habitaciones</title>
-        <jsp:include page="/cabecera.jsp"/>
-    </head>
-    <body>
-        <jsp:include page="/menu.jsp"/>
-        <div align="right">
-                	Bienvenido Sr: <%=session.getAttribute("email") %>
-                	<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar Sesion</a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <h3>Lista de Habitaciones</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-10">
-                    <a type="button" class="btn btn-primary btn-md" href="${pageContext.request.contextPath}/habitaciones.do?op=nuevo"> Nueva Habitación</a>
-                <br><br>
-                <table class="table table-striped table-bordered table-hover" id=tabla>
-                    <thead>
-                        <tr>
-                            <th>Número</th>
-                            <th>Tipo</th>
-                            <th>Descripción</th>
-                            <th>Plazas</th>
-                            <th>Precio/día</th>
-                            <th>Operaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    	<c:forEach items="${requestScope.listaHabitaciones}" var="habitacion"> <!-- recorremos la lista que nos envio el controlador -->
-                            <tr>
-                                <td>${habitacion.numeroHabitacion}</td>
-                                <td>${habitacion.tipo}</td>
-                                <td>${habitacion.descripcion}</td>
-                                <td>${habitacion.cantidadPlazas}</td>
-                                <td>$ ${habitacion.costoDiario}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/habitaciones.do?op=obtener&numeroHabitacion=${habitacion.numeroHabitacion}"><span class="glyphicon glyphicon-edit"></span></a>
-                                    <a  class="btn btn-danger" href="javascript:eliminar('${habitacion.numeroHabitacion}')"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>
-                            </tr>
-                   		</c:forEach>
-                    </tbody>
-                </table>
-                </div>
-                
-            </div>                    
-        </div> 
-        
-        <script type="text/javascript">
+<head>
+<title>Lista de Habitaciones</title>
+<jsp:include page="/cabecera.jsp" />
+</head>
+<body>
+	<jsp:include page="/menu.jsp" />
+	<div align="right">
+		Bienvenido Sr:
+		<%=session.getAttribute("email") %>
+		<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar
+			Sesion</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<h3>Lista de Habitaciones</h3>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<a type="button" class="btn btn-primary btn-md"
+					href="${pageContext.request.contextPath}/habitaciones.do?op=nuevo">
+					Nueva Habitación</a> <br>
+				<br>
+				<table class="table table-striped table-bordered table-hover"
+					id=tabla>
+					<thead>
+						<tr>
+							<th>Número</th>
+							<th>Tipo</th>
+							<th>Descripción</th>
+							<th>Plazas</th>
+							<th>Precio/día</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<c:forEach items="${requestScope.listaHabitaciones}"
+							var="habitacion">
+							<!-- recorremos la lista que nos envio el controlador -->
+							<tr>
+								<td>${habitacion.numeroHabitacion}</td>
+								<td>${habitacion.tipo}</td>
+								<td>${habitacion.descripcion}</td>
+								<td>${habitacion.cantidadPlazas}</td>
+								<td>$ ${habitacion.costoDiario}</td>
+								<td><a class="btn btn-primary"
+									href="${pageContext.request.contextPath}/habitaciones.do?op=obtener&numeroHabitacion=${habitacion.numeroHabitacion}"><span
+										class="glyphicon glyphicon-edit"></span></a> <a
+									class="btn btn-danger"
+									href="javascript:eliminar('${habitacion.numeroHabitacion}')"><span
+										class="glyphicon glyphicon-trash"></span></a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
         /*convertimos la tabla en un data table*/
     	$(document).ready(function() {
 				$('#tabla').DataTable({
@@ -112,9 +121,9 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 	    	}
 		
         </script>
-        
-        
-    </body>
+
+
+</body>
 </html>
 
 

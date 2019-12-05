@@ -2,8 +2,9 @@
 
 /*-------Estilos para texto de validacion formulario nuevoCliente------*/
 .miClaseError {
-    color:#FF0000;  /* rojo */
+	color: #FF0000; /* rojo */
 }
+
 .miClaseValidada {
-    color:#00CC00; /* verde */
+	color: #00CC00; /* verde */
 }

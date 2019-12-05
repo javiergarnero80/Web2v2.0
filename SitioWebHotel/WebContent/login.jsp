@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 
 response.setHeader("Pragma","no-cache");
@@ -14,24 +14,42 @@ response.setDateHeader("Expires", 0);
 <head>
 <meta charset="ISO-8859-1">
 
-<link href="${pageContext.request.contextPath}/assets/css4/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}//assets/css4/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/css4/estilos.css" rel="stylesheet" type="text/css">
+<link
+	href="${pageContext.request.contextPath}/assets/css4/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}//assets/css4/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css4/estilos.css"
+	rel="stylesheet" type="text/css">
 
-<script src="${pageContext.request.contextPath}/assets/js/jquery-1.12.0.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/assets/js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/assets/js/validacion.js" type="text/javascript"></script>
-<link href="${pageContext.request.contextPath}/assets/css/estilosValidation.css" rel="stylesheet">
+<script
+	src="${pageContext.request.contextPath}/assets/js/jquery-1.12.0.min.js"
+	type="text/javascript"></script>
+<script
+	src="${pageContext.request.contextPath}/assets/js/jquery.validate.min.js"
+	type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/assets/js/validacion.js"
+	type="text/javascript"></script>
+<link
+	href="${pageContext.request.contextPath}/assets/css/estilosValidation.css"
+	rel="stylesheet">
 
-<link href="${pageContext.request.contextPath}/assets/css/alertify.core.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}/assets/css/alertify.default.css" rel="stylesheet" type="text/css"/>
-<script src="${pageContext.request.contextPath}/assets/js/alertify.js" type="text/javascript"></script>
+<link
+	href="${pageContext.request.contextPath}/assets/css/alertify.core.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="${pageContext.request.contextPath}/assets/css/alertify.default.css"
+	rel="stylesheet" type="text/css" />
+<script src="${pageContext.request.contextPath}/assets/js/alertify.js"
+	type="text/javascript"></script>
 
 <title>Login de Hotel</title>
 </head>
 <body class="bg-secondary" id="cuerpoFondo">
 
-	<form id="frm-login" action="${pageContext.request.contextPath}/login.do" method="post">
+	<form id="frm-login"
+		action="${pageContext.request.contextPath}/login.do" method="post">
 
 		<div class="container">
 			<div class="row">
@@ -49,7 +67,7 @@ response.setDateHeader("Expires", 0);
 
 						<div class="form-group">
 							<label class="control-lable" for="usuario">Contraseña</label> <input
-								type="password" name="contrasena" class="form-control" 
+								type="password" name="contrasena" class="form-control"
 								placeholder="contrasena">
 						</div>
 
@@ -58,15 +76,17 @@ response.setDateHeader("Expires", 0);
 								value="Ingresar" name="btnEnviar">Ingresar</button>
 							<!--  <button type="reset" class="btn btn-outline-dark">Borrar</button>-->
 							<a class="btn btn-danger"
-								href="${pageContext.request.contextPath}/inicioHotel.html">Cancelar e ir
-								a Inicio</a>
-						</div><br><br>
+								href="${pageContext.request.contextPath}/inicioHotel.html">Cancelar
+								e ir a Inicio</a>
+						</div>
+						<br>
+						<br>
 						<p>
-						Si no posee cuenta por favor <a href="clientes.do?op=nuevo">resgistrese</a>.
-						Muchas gracias.
+							Si no posee cuenta por favor <a href="clientes.do?op=nuevo">resgistrese</a>.
+							Muchas gracias.
 						</p>
 					</div>
-					
+
 					<!--  <div class="col-md-3"></div>-->
 				</div>
 			</div>

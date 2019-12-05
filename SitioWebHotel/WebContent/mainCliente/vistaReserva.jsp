@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="true" %>
+<%@ page session="true"%>
 <%
 //afregamos seguridad al uso de sesiones, evitando que al recargar o al hacer atras se mantengan las sesiones
 response.setHeader("Pragma","no-cache");
@@ -30,14 +30,27 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 <meta name="author" content="">
 <title>Hotel | Reservas</title>
 
-<link href="${pageContext.request.contextPath}/mainCliente/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/font-awesome.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/prettyPhoto.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/price-range.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/animate.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/main.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/responsive.css" rel="stylesheet">
-	
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/prettyPhoto.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/price-range.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/animate.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/mainCliente/css/main.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/responsive.css"
+	rel="stylesheet">
+
 
 
 <!--[if lt IE 9]>

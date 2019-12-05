@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true"%>
 <%
 
 response.setHeader("Pragma","no-cache");
@@ -22,80 +22,91 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Listado de Sugerencias</title>
-        <jsp:include page="/cabecera.jsp"/>
-    </head>
-    <body>
-        <jsp:include page="/menu.jsp"/>
-        <div align="right">
-                	Bienvenido Sr: <%=session.getAttribute("email") %>
-                	<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar Sesion</a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <h3>Listado de Sugerencias</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-10">
-                   <!--  <a type="button" class="btn btn-primary btn-md" href="${pageContext.request.contextPath}/clientes.do?op=nuevo"> Nuevo Cliente</a>--> 
-                <br>
-                <table class="table table-striped table-bordered table-hover" id=tabla>
-                    <thead>
-                        <tr>
-                        	<th>IdContacto</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Operaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    	<c:forEach items="${requestScope.listaContactos}" var="contacto"> <!-- recorremos la lista que nos envio el controlador -->
-                            <tr>
-                            	<td>${contacto.idContacto}</td>
-                                <td>${contacto.nombre}</td>
-                                <td>${contacto.email}</td>
-                                <td>
-                                	<a  class="btn btn-default" href="javascript:detalles('${contacto.idContacto}')"><span class="glyphicon glyphicon-search"></span></a>
-                                    <!--<a class="btn btn-primary" href="#"><span class="glyphicon glyphicon-edit"></span></a>-->
-                                    <a  class="btn btn-danger" href="javascript:eliminar('${contacto.idContacto}')"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>
-                            </tr>
-                   		</c:forEach>
-                    </tbody>
-                </table>
-                </div>
-                
-            </div>                    
-        </div>
-	
+<head>
+<title>Listado de Sugerencias</title>
+<jsp:include page="/cabecera.jsp" />
+</head>
+<body>
+	<jsp:include page="/menu.jsp" />
+	<div align="right">
+		Bienvenido Sr:
+		<%=session.getAttribute("email") %>
+		<a href="${pageContext.request.contextPath}/cerrarSesion.do">Cerrar
+			Sesion</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<h3>Listado de Sugerencias</h3>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<!--  <a type="button" class="btn btn-primary btn-md" href="${pageContext.request.contextPath}/clientes.do?op=nuevo"> Nuevo Cliente</a>-->
+				<br>
+				<table class="table table-striped table-bordered table-hover"
+					id=tabla>
+					<thead>
+						<tr>
+							<th>IdContacto</th>
+							<th>Nombre</th>
+							<th>Email</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<c:forEach items="${requestScope.listaContactos}" var="contacto">
+							<!-- recorremos la lista que nos envio el controlador -->
+							<tr>
+								<td>${contacto.idContacto}</td>
+								<td>${contacto.nombre}</td>
+								<td>${contacto.email}</td>
+								<td><a class="btn btn-default"
+									href="javascript:detalles('${contacto.idContacto}')"><span
+										class="glyphicon glyphicon-search"></span></a> <!--<a class="btn btn-primary" href="#"><span class="glyphicon glyphicon-edit"></span></a>-->
+									<a class="btn btn-danger"
+									href="javascript:eliminar('${contacto.idContacto}')"><span
+										class="glyphicon glyphicon-trash"></span></a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
 	<!-- Ventana modal -->
-	
+
 	<div class="modal fade" id="miModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title"></h4>
 				</div>
 				<div class="modal-body">
 					<ul class="list-group">
-						<li class="list-group-item"><b>Email del contacto: </b><spam id="email"/></li>
-						<li class="list-group-item"><b>Sugerencia: </b><spam id="consulta"/></li>
-						
+						<li class="list-group-item"><b>Email del contacto: </b>
+						<spam id="email" /></li>
+						<li class="list-group-item"><b>Sugerencia: </b>
+						<spam id="consulta" /></li>
+
 					</ul>
-					
-					
+
+
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
 
 	<script type="text/javascript">
 	 /*convertimos la tabla en un data table*/
@@ -168,9 +179,9 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 
 		}
 	</script>
-        
-        
-    </body>
+
+
+</body>
 </html>
 
 

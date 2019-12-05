@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="true" %>
+<%@ page session="true"%>
 <%
 //afregamos seguridad al uso de sesiones, evitando que al recargar o al hacer atras se mantengan las sesiones
 response.setHeader("Pragma","no-cache");
@@ -37,14 +37,27 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 	<link href="css/responsive.css" rel="stylesheet">
 	 -->
 
-<link href="${pageContext.request.contextPath}/mainCliente/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/font-awesome.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/prettyPhoto.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/price-range.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/animate.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/main.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/mainCliente/css/responsive.css" rel="stylesheet">
-	
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/prettyPhoto.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/price-range.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/animate.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/mainCliente/css/main.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/mainCliente/css/responsive.css"
+	rel="stylesheet">
+
 
 
 <!--[if lt IE 9]>
@@ -78,7 +91,8 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 						<!--features_items-->
 						<h2 class="title text-center">Habitaciones Disponibles</h2>
 						<!-- listamos habitaciones -->
-						<c:forEach items="${requestScope.listaHabitacionesCarrito}" var="habitacion">
+						<c:forEach items="${requestScope.listaHabitacionesCarrito}"
+							var="habitacion">
 							<!-- recorremos la lista que nos envio el controlador -->
 							<div class="col-sm-4">
 								<div class="product-image-wrapper">
@@ -99,11 +113,15 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 												<!--  
 												<a href="${pageContext.request.contextPath}/carrito.do?op=detalle&numeroHabitacion=${habitacion.numeroHabitacion}" class="btn btn-default add-to-cart"><i
 													class="fa fa-shopping-cart"></i>Ver Detalles</a>-->
-													
-												<form action="${pageContext.request.contextPath}/carrito.do" method="post">
-													<input type="hidden" name="op" value="detalle">
-													<input type="hidden" name="numeroHabitacion" value="${habitacion.numeroHabitacion}">
-													<input class="btn btn-default add-to-cart" class="fa fa-shopping-cart" type="submit" value="Ver Detalles">
+
+												<form action="${pageContext.request.contextPath}/carrito.do"
+													method="post">
+													<input type="hidden" name="op" value="detalle"> <input
+														type="hidden" name="numeroHabitacion"
+														value="${habitacion.numeroHabitacion}"> <input
+														class="btn btn-default add-to-cart"
+														class="fa fa-shopping-cart" type="submit"
+														value="Ver Detalles">
 												</form>
 											</div>
 										</div>
@@ -160,15 +178,21 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 			</div>
 		</div>
 	</section>
-	
+
 	<jsp:include page="/mainCliente/piePaginaCarrito.jsp" />
-	
- 	<script src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.js"></script>
-	<script src="http://localhost:7683/SitioWebHotel/mainCliente/js/price-range.js"></script>
-    <script src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.scrollUp.min.js"></script>
-	<script src="http://localhost:7683/SitioWebHotel/mainCliente/js/bootstrap.min.js"></script>
-    <script src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.prettyPhoto.js"></script>
-    <script src="http://localhost:7683/SitioWebHotel/mainCliente/js/main.js"></script>
-  
+
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.js"></script>
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/price-range.js"></script>
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.scrollUp.min.js"></script>
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/bootstrap.min.js"></script>
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/jquery.prettyPhoto.js"></script>
+	<script
+		src="http://localhost:7683/SitioWebHotel/mainCliente/js/main.js"></script>
+
 </body>
 </html>
