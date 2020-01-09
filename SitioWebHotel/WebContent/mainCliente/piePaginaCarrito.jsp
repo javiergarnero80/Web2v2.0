@@ -20,8 +20,9 @@
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
 							<a href="#">
-								<div class="iframe-img">
-									<img
+								 
+									<div class="iframe-img">
+								<img
 										src="${pageContext.request.contextPath}/mainCliente/images/shop/hab105.jpg"
 										alt="" width="121px" height="57" />
 								</div>
@@ -37,8 +38,9 @@
 					<div class="col-sm-3">
 						<div class="video-gallery text-center">
 							<a href="#">
-								<div class="iframe-img">
-									<img
+						
+									<div class="iframe-img">
+								<img
 										src="${pageContext.request.contextPath}/mainCliente/images/shop/hab100.jpg"
 										alt="" width="121px" height="57" />
 								</div>

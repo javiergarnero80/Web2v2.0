@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hotel.beans.Habitacion;
 import com.hotel.beans.Servicio;
 
 public class ServiciosModel extends Conexion {

@@ -12,7 +12,7 @@ response.addHeader("Cache-control","no-store");
 response.setDateHeader("Expires", 0);
 
 try{
-if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
+if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null && session.getAttribute("Nombre")==null){
 	//request.getRequestDispatcher("login.jsp").forward(request, response);//despacho al login si no hay variables de sesion
 	response.sendRedirect("login.jsp");//redirigimos en el cliente para evitar reenvio de formulario de login
 }
@@ -91,23 +91,35 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 
 <script type="text/javascript">
     	/*cuando carga la pagina el cliente presiona el enlace y el mismo se descarga a su computadora local*/
-   	 	/*
-    	var doc = new jsPDF()
-    	doc.text('Hello world!', 10, 10)
-    	doc.save('a4.pdf')
-    	*/
-    	
-    	function genPDF(){
-    		html2canvas($('#captura'),{
-    			onrendered: function (canvas){
-    				var img = canvas.toDataURL("image/png");
-    				var doc = new jsPDF("l","pt","legal");
-    				doc.addImage(img, 'JPEG',5,5); 
-    				doc.save('voucher.pdf');
-    			}
-    		});
-    	}
 
+    /*	var doc = new jsPDF()
+    	doc.text('Hello world!', 50, 10)   //(TEXTO,X,Y)=POSICION DEL TEXTO DENTRO DEL PDF
+    	doc.save('Reserva.pdf')
+    	*/
+        	
+    	/*function genPDF(){
+    		html2canvas($('#captura'),{
+    		//html2canvas(document.body,{	
+    			//dpi: 192, 
+    			onrendered: function (canvas){
+    				//var img = canvas.toDataURL("image/png");
+    				var img = canvas.toDataURL("image/JPEG");
+    				var doc = new jsPDF("1","pt","legal");
+    				doc.addImage(img,'JPEG',5,5); 
+    				doc.save('Voucher.pdf');
+    				*/
+    				    				
+    				function genPDF(){
+    		    		html2canvas($('#captura'),{
+    		    			onrendered: function (canvas){
+    		    				var img = canvas.toDataURL("image/JPEG");
+    		    				var doc = new jsPDF("l","pt","legal");
+    		    				doc.addImage(img, 'JPEG',5,5); 
+    		    				doc.save('voucher.pdf');
+    		    			}
+    		    		});
+    		    	}
+    	
     </script>
 
 </head>
@@ -137,11 +149,11 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 			</div>
 
 			<div class="table-responsive cart_info" id="captura">
-				<!--  <p>Vocuher a nombre de</p>-->
+				<!--  <p>Voucher a nombre de</p>-->
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td>Vocuher a nombre de: <%=session.getAttribute("email") %></td>
+			     		<td>Voucher a nombre de: <%=session.getAttribute("Nombre")%></td>
 						</tr>
 						<tr class="cart_menu">
 							<td class="image">Foto de Habitación</td>

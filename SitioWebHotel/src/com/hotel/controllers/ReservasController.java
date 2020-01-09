@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hotel.beans.Reserva;
-import com.hotel.models.HabitacionesModel;
 import com.hotel.models.ReservasModel;
 
 /**

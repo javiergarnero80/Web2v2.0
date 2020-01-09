@@ -158,6 +158,7 @@ public class CarritoController extends HttpServlet {
 	
 	
 	//metodo para agregar Habitacion a carrito
+	@SuppressWarnings("unchecked")
 	private void agregarCarrito(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			
@@ -279,6 +280,7 @@ public class CarritoController extends HttpServlet {
 	
 	//metodo que recibe datos del checkout y registrar la reserva
 
+	@SuppressWarnings("unchecked")
 	private void registrarReserva(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		try {
@@ -287,7 +289,6 @@ public class CarritoController extends HttpServlet {
 			
 			//recuperamos datos de Cliente pasados por formulario
 			int idCliente=Integer.parseInt(request.getParameter("idCliente"));//se pasa como hidden
-			String nombre=request.getParameter("nombre");
 			String email=request.getParameter("email");
 			//recuperamos el total de la reserva que se pasa como hidden
 			double totalGeneralReserva = Double.parseDouble(request.getParameter("totalGeneralReserva"));

@@ -43,6 +43,7 @@ response.setDateHeader("Expires", 0);
 	rel="stylesheet" type="text/css" />
 <script src="${pageContext.request.contextPath}/assets/js/alertify.js"
 	type="text/javascript"></script>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 
 <title>Login de Hotel</title>
 </head>
@@ -67,22 +68,33 @@ response.setDateHeader("Expires", 0);
 
 						<div class="form-group">
 							<label class="control-lable" for="usuario">Contraseña</label> <input
-								type="password" name="contrasena" class="form-control"
-								placeholder="contrasena">
+						 type="password" name="contrasena" class="form-control" id="myInput" placeholder="contrasena"> <input type="checkbox" onclick="myFunction()">   Ver Password   
 						</div>
-
-						<div class="pull-right">
+    				                	                   
+                    <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                                if (x.type === "password") {
+                                x.type = "text";
+                                }
+                                else 
+                                {
+                                x.type = "password";
+                                 }
+                                }
+</script>
+    
+    						<div class="pull-right">
 							<button type="submit" class="btn btn-outline-warning"
 								value="Ingresar" name="btnEnviar">Ingresar</button>
 							<!--  <button type="reset" class="btn btn-outline-dark">Borrar</button>-->
 							<a class="btn btn-danger"
-								href="${pageContext.request.contextPath}/inicioHotel.html">Cancelar
-								e ir a Inicio</a>
+								href="${pageContext.request.contextPath}/inicioHotel.html">Cancelar	e ir a Inicio</a>
 						</div>
 						<br>
 						<br>
 						<p>
-							Si no posee cuenta por favor <a href="clientes.do?op=nuevo">resgistrese</a>.
+							Si no posee cuenta por favor <a href="clientes.do?op=nuevo">registrese</a>.
 							Muchas gracias.
 						</p>
 					</div>

@@ -132,7 +132,7 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 
 		</c:if>
 
-		//funcion javascript que elimina un editorial: se llama desde href de boton eliminar
+		//funcion javascript que elimina una editorial: se llama desde href de boton eliminar
 		function eliminar(id) {
 
 			alertify

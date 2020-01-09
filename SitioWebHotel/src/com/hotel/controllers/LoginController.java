@@ -49,7 +49,7 @@ public class LoginController extends HttpServlet {
 				//llamo a metodo validar de clase ClientesModel y le paso parametros recogidos del formulario
 				nivel=u.validar(email, contrasena);//0-noexiste,1-admin,2userRegistrado,3-userAnonimo
 				idCliente=u.obtenerIdCliente(email, contrasena);//obtengo idCliente para carrito
-				//manjo de sesiones
+				//manejo de sesiones
 				HttpSession sesion= request.getSession();
 					if(nivel==1){
 						//creo sesion

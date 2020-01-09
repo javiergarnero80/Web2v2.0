@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.hotel.beans.Contacto;
-import com.hotel.beans.Habitacion;
-import com.hotel.beans.Hotel;
 import com.hotel.models.ContactosModel;
 
 /**

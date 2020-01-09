@@ -8,7 +8,6 @@ import java.util.List;
 import javax.servlet.ServletException;
 
 import com.hotel.beans.Contacto;
-import com.hotel.beans.Habitacion;
 
 public class ContactosModel extends Conexion {
 	
