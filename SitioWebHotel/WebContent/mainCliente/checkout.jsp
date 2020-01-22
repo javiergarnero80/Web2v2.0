@@ -181,8 +181,7 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null){
 								<p>
 									<b>Información Registrada</b>
 								</p>
-								<p>Al confirmar su reserva prodrá ver y descargar el voucher
-									en PDF.</p>
+								<p>Al confirmar su reserva podrá ver y descargar el voucher formato PDF.</p>
 								<form action="carrito.do?op=registrarReserva" method="post">
 									<label>Nombre</label><input type="text" name="nombre"
 										value="${cliente.nombre}" placeholder="Display Name" readonly>

@@ -4,7 +4,7 @@
 <%@page import="com.hotel.controllers.HabitacionesController"%>
 <%@ page session="true"%>
 <%
-//afregamos seguridad al uso de sesiones, evitando que al recargar o al hacer atras se mantengan las sesiones
+//agregamos seguridad al uso de sesiones, evitando que al recargar o al hacer atras se mantengan las sesiones
 response.setHeader("Pragma","no-cache");
 response.addHeader("Cache-control","must-revalidate");
 response.addHeader("Cache-control","no-cache");
@@ -112,10 +112,14 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
     				function genPDF(){
     		    		html2canvas($('#captura'),{
     		    			onrendered: function (canvas){
+    		    				//var img = canvas.toDataURL("image/JPEG");
+    		    				//var pdf = new jsPDF('p', 'in', [5,2]);
+    		    				//doc.addImage(img,'JPEG',5,5); //casi casi
+    		    				
     		    				var img = canvas.toDataURL("image/JPEG");
-    		    				var doc = new jsPDF("l","pt","legal");
-    		    				doc.addImage(img, 'JPEG',5,5); 
-    		    				doc.save('voucher.pdf');
+    		    				var doc = new jsPDF('l', 'mm', [300, 220]);//casi anda
+    		                    doc.addImage(img,'JPEG',5,5);
+  		                        doc.save('voucher.pdf');
     		    			}
     		    		});
     		    	}
@@ -153,7 +157,7 @@ if(session.getAttribute("email") ==null && session.getAttribute("nivel")==null &
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-			     		<td>Voucher a nombre de: <%=session.getAttribute("Nombre")%></td>
+			     		<td>Voucher a nombre de: <%=session.getAttribute("email")%></td>
 						</tr>
 						<tr class="cart_menu">
 							<td class="image">Foto de Habitación</td>
